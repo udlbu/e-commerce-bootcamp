@@ -1,0 +1,54 @@
+{
+  "realm": "ecommerce-app",
+  "accessTokenLifespan": "7200",
+  "enabled": true,
+  "users": [
+    {
+      "username": "johnny.lee@mail.com",
+      "email": "johnny.lee@mail.com",
+      "firstName": "Johnny",
+      "lastName": "Lee",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "s3cr3t"
+        }
+      ],
+      "realmRoles": [
+        "user"
+      ]
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "user",
+        "description": "User privileges"
+      },
+      {
+        "name": "admin",
+        "description": "Administrator privileges"
+      }
+    ]
+  },
+  "defaultRoles": [
+    "user"
+  ],
+  "clients": [
+    {
+      "clientId": "ecommerce-app-id",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled" : true,
+      "directAccessGrantsEnabled" : true,
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [
+        "*"
+      ]
+    }
+  ]
+}

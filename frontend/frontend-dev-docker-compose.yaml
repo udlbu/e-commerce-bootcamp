@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  keycloak:
+    ports:
+      - '38080:8080'
+    environment:
+      - KEYCLOAK_ADMIN=admin_user
+      - KEYCLOAK_ADMIN_PASSWORD=admin_pwd
+    image: keycloak/keycloak:22.0.1
+    volumes:
+      - ./config/keycloak:/opt/keycloak/data/import
+    command:
+      - start-dev
+      - --import-realm
+volumes:
+  db:
+    driver: local

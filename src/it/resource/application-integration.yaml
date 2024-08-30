@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:14.1:///
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.default_schema: app
+  flyway:
+    schemas: app
+    createSchemas: true
+    locations: classpath:/db/migration/ddl,classpath:/db/migration/shared,classpath:/db/migration/integration
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: TO_BE_REPLACED_DYNAMICALLY
+          jwk-set-uri: TO_BE_REPLACED_DYNAMICALLY
+
+iam:
+  keycloak-server: TO_BE_REPLACED_DYNAMICALLY
+  realm: TO_BE_REPLACED_DYNAMICALLY
+  admin:
+    realm: master
+    client-id: admin-cli
+    username: TO_BE_REPLACED_DYNAMICALLY
+    password: TO_BE_REPLACED_DYNAMICALLY
+
+cdn:
+  host: TO_BE_REPLACED_DYNAMICALLY
+  region: test-region
+  apiKey: mock_api_key
+  imgUrl: https://fake.cdn.url.com/

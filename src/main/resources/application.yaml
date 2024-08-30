@@ -1,0 +1,13 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+cdn:
+  enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["prometheus"]

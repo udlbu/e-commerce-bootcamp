@@ -1,0 +1,69 @@
+### Authorize Keycloak Admin
+POST {{keycloakHost}}/realms/master/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=admin-cli&username=keycloak_admin&password=keycloak_admin&grant_type=password
+
+> {%
+    client.global.set("auth_token", response.body.access_token);
+%}
+
+### Create user
+POST {{keycloakHost}}/admin/realms/{{realm}}/users
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+{
+  "username": "apiuser",
+  "email": "api@mail.com",
+  "firstName": "api",
+  "lastName": "api",
+  "requiredActions": [],
+  "emailVerified": true,
+  "groups": [],
+  "enabled": true,
+  "realmRoles": [
+    "user"
+  ],
+  "credentials": [
+    {
+      "type": "password",
+      "value": "s3cr3t"
+    }
+  ]
+}
+
+### GET user by email
+GET {{keycloakHost}}/admin/realms/{{realm}}/users?email=api@mail.com
+Accept: application/json
+Authorization: Bearer {{auth_token}}
+
+> {%
+    client.global.set("user_id", response.body[0].id);
+%}
+
+### GET all roles for the realm
+GET {{keycloakHost}}/admin/realms/{{realm}}/roles
+Authorization: Bearer {{auth_token}}
+
+### ADD role to the user
+POST {{keycloakHost}}/admin/realms/{{realm}}/users/{{user_id}}/role-mappings/realm
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+[
+  {
+    "id": "8f7b5f95-a220-4740-af42-23f08585e88b",
+    "name": "user"
+  }
+]
+
+### Reset user password
+PUT {{keycloakHost}}/admin/realms/{{realm}}/users/{{user_id}}/reset-password
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+{
+  "type": "password",
+  "value": "secret"
+}

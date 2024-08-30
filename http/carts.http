@@ -1,0 +1,4 @@
+### GET user cart
+GET {{host}}/api/carts/2
+Accept: application/json
+Cookie: x-session-id=7d5894ed-1502-47c0-b27d-24dc08f77ce4

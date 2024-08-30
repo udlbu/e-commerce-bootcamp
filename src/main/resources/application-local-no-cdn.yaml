@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce_db
+    username: postgres
+    password: postgres
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.default_schema: app #changed from default "public" schema to custom "app"
+  flyway:
+    schemas: app
+    createSchemas: true
+    locations: classpath:/db/migration/ddl,classpath:/db/migration/shared,classpath:/db/migration/local
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:28080/realms/ecommerce-app
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs # to verify JWT token
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: bootcampb521
+    password: nmadjfujmxbfkzar
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+domain:
+  host: http://localhost:8080
+
+iam:
+  keycloak-server: http://localhost:28080
+  realm: ecommerce-app
+  admin:
+    realm: master
+    client-id: admin-cli
+    username: keycloak_admin
+    password: keycloak_admin
+
+cdn:
+  enabled: false
+

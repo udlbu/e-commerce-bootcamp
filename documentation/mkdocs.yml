@@ -1,0 +1,10 @@
+site_name: The Project Intro
+theme:
+  name: material
+nav:
+  - 'overview.md'
+  - 'project_layout.md'
+  - 'cdn.md'
+  - 'monitoring.md'
+  - 'pictures.md'
+  - 'extra_tasks.md'

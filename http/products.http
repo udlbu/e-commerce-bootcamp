@@ -1,0 +1,37 @@
+### ADD new product
+POST {{host}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Iphone 6",
+  "ean": "12328854",
+  "category": "ELECTRONICS",
+  "image": "base64pic",
+  "description": "Mobile phone"
+}
+
+### MODIFY product
+PUT {{host}}/api/products
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Iphone 66",
+  "ean": "111111",
+  "category": "ELECTRONICS",
+  "image": "base64pic",
+  "description": "Mobile phone modified",
+  "version": 1
+}
+
+### GET product
+GET {{host}}/api/products/1
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzNnpGTy1PNlF2T3QycXRPVXB1Y2d2Y0U4XzlaUnkybGcwSG9QSWhJNWhZIn0.eyJleHAiOjE2OTM2Nzc3OTEsImlhdCI6MTY5MzY3NzQ5MSwianRpIjoiNzE2N2Y5MjMtMDViYS00ZGMwLWE5OGItYjI1OWQ3OWI5NTljIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDoyODA4MC9yZWFsbXMvZWNvbW1lcmNlLWFwcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1NGFiOGY5OC0yM2EwLTRmNzYtYjZlNy0wNjZjMTdiYzIyM2YiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJlY29tbWVyY2UtYXBwLWlkIiwic2Vzc2lvbl9zdGF0ZSI6IjhhYTQwMDQwLTA3NjctNGEwNi1hMzFiLTY5ZjRlNjliZWQyNCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgxIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtZWNvbW1lcmNlLWFwcCIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjhhYTQwMDQwLTA3NjctNGEwNi1hMzFiLTY5ZjRlNjliZWQyNCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6Ikthcm9sIEtvcm5lY2tpIiwicHJlZmVycmVkX3VzZXJuYW1lIjoia2tvcm5lY2tpIiwiZ2l2ZW5fbmFtZSI6Ikthcm9sIiwiZmFtaWx5X25hbWUiOiJLb3JuZWNraSJ9.X0Ql-3O1B5oQoGxbNeHFP0e4Ba1BGkENJwzFCR4X3n9KqwWKHscZHEUrWMhsjX94HhFRk2iYUrxHBOh1cvF_NIJXKjMWN5jcwzo8X3_GwWJKLPf1nyI4h-OFxodihZYou1vaAhaB3qiiWexi-ldPigeTPXIjEwKbN8iiKDOB4ljsgAnqXsf5lt7lZRygyO5j1pRNPBRV6OzZnP-pu3biT8mByM_MCBHY8_1Gw98XiAhOVdZ6QPDQw87B2-AqIPIa0vlT89tvs-5oO2DZkmp-SMEu3i2kqmmF_owNAQg_79xk-gt9zC_kA5678qYMZwQbq9aeDeDS8YstmzajbaX2Jw
+
+### GET products
+GET {{host}}/api/products
+Accept: application/json
+
+### DELETE product
+DELETE {{host}}/api/products/1

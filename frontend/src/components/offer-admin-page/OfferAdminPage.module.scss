@@ -1,0 +1,30 @@
+.loadedImage {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+}
+
+.imgBox {
+  width: 50%;
+  margin: auto;
+}
+
+.quantity {
+  margin: 10px 16px;
+}
+
+.field {
+  background-color: #F6F7FB;
+  height: 45px;
+  padding-top: 10px;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.fieldArea {
+  background-color: #F6F7FB;
+  height: 80px;
+  padding-top: 10px;
+  padding-left: 20px;
+  overflow-y: scroll;
+}

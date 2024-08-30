@@ -1,0 +1,21 @@
+### ADD new user
+POST {{host}}/api/users
+Content-Type: application/json
+
+{
+  "email": "tom@mail.com",
+  "password": "secret",
+  "firstName": "Tom",
+  "lastName": "Brown",
+  "taxId": "346674322",
+  "country": "England",
+  "city": "London",
+  "street": "Downing street",
+  "buildingNo": "32a",
+  "flatNo": "10",
+  "postalCode": "AX 223-1"
+}
+
+### GET user
+GET {{host}}/api/users/1
+Accept: application/json

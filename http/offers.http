@@ -1,0 +1,45 @@
+### ADD new offer
+POST {{host}}/api/offers
+Content-Type: application/json
+
+{
+  "userId": "1",
+  "price": "9.99",
+  "quantity": "1",
+  "productId": "1"
+}
+
+### MODIFY offer
+PUT {{host}}/api/offers
+Content-Type: application/json
+
+{
+  "id": 1,
+  "price": "9.99",
+  "quantity": "1",
+  "productId": "1",
+  "version": 1
+}
+
+### GET offer
+GET {{host}}/api/offers/1
+Accept: application/json
+
+### SEARCH offers page
+POST {{host}}/api/offers/search
+Content-Type: application/json
+Accept: application/json
+
+{
+  "page": 0,
+  "size": 100
+}
+
+### DELETE offer
+DELETE {{host}}/api/offers/1
+
+### ACTIVATE offer
+PUT {{host}}/api/offers/1/activate
+
+### DEACTIVATE offer
+PUT {{host}}/api/offers/1/deactivate

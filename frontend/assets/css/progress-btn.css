@@ -1,0 +1,92 @@
+.progress-btn {
+  position: relative;
+  width: 150px;
+  height: 42px;
+  display: inline-block;
+  /*background: #f7941d;*/
+  /*background: #fff;*/
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  /*color: #fff;*/
+  color: #f7941d;
+  font-weight: normal;
+  font-size: 20px;
+  transition: all 0.4s ease;
+}
+.progress-btn:not(.active) {
+  cursor: pointer;
+}
+
+.progress-btn .btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 42px;
+  text-align: center;
+  z-index: 10;
+  opacity: 1;
+}
+
+.progress-btn .progress {
+  width: 0%;
+  z-index: 5;
+  background: #d32f2f;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.progress-btn.active .progress {
+  opacity: 1;
+  animation: progress-anim 10s ease 0s;
+}
+
+.progress-btn.active .progress {
+  animation: dash 2s ease infinite, rotate 2s linear infinite;
+}
+
+.progress-btn.active {
+  width: 42px;
+}
+
+.progress-btn .progress {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  position: absolute;
+  top: 2px;
+  left: calc(50% - 20px);
+}
+.progress-btn.active .btn {
+  opacity: 0;
+}
+
+.circle-loader {
+  fill: transparent;
+  /*stroke: #eee;*/
+  stroke: #f7941d;
+  stroke-width: 5;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 95;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 85, 95;
+    stroke-dashoffset: -25;
+  }
+  100% {
+    stroke-dasharray: 85, 95;
+    stroke-dashoffset: -93;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
