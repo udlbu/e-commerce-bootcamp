@@ -83,8 +83,5 @@ If you're an **instructor**:
 - **Attribution:**  
   If you use this project, **always link to the original repository** and mention its purpose.
 
-- **Contact:**  
-  Email `info@udlbu.io` to share feedback or discuss active collaboration.
-
 ---
 
